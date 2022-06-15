@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Aloe",
       "image": "./images/aloe.jpg",
-      "price": 15.99
+      "price": 19
     },
     {
       "id": 2,
@@ -44,7 +44,7 @@
     },
     {
       "name": "newVictim",
-      "price": "0.13",
+      "price": 0.13,
       "image": "http://localhost:3000/images/pilea.jpg",
       "id": 8
     }

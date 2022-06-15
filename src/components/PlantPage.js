@@ -11,8 +11,14 @@ function PlantPage() {
     .then(r => r.json())
     .then(data => setPlantList(data))
   },[])
-  const helpPatch = (plant) => {
-    setPlantList([...plantList, plant])
+  const helpPatch = (patchPlant) => {
+    setPlantList(plantList.map(plant => {
+      if (plant.id === patchPlant.id) {
+        return patchPlant
+      } else {
+        return plant
+      }
+    }))
   }
   const helpFilter = (searchBy) => {
     setFilter(searchBy.toLowerCase())
@@ -26,7 +32,7 @@ function PlantPage() {
     <main>
       <NewPlantForm helpPatch={helpPatch}/>
       <Search helpFilter={helpFilter}/>
-      <PlantList plantList={plantListFiltered} helpDelete={helpDelete}/>
+      <PlantList plantList={plantListFiltered} helpPatch={helpPatch} helpDelete={helpDelete}/>
     </main>
   );
 }
