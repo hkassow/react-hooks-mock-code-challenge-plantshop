@@ -17,13 +17,16 @@ function PlantPage() {
   const helpFilter = (searchBy) => {
     setFilter(searchBy.toLowerCase())
   }
+  const helpDelete = (id) => {
+    setPlantList(plantList.filter(plant => !(plant.id === id)))
+  }
   const plantListFiltered = (plantList)? plantList.filter(plant => plant.name.toLowerCase().includes(plantFilter)):[]
 
   return (
     <main>
       <NewPlantForm helpPatch={helpPatch}/>
       <Search helpFilter={helpFilter}/>
-      <PlantList plantList={plantListFiltered}/>
+      <PlantList plantList={plantListFiltered} helpDelete={helpDelete}/>
     </main>
   );
 }
