@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "newPlant",
+      "price": "1000",
+      "image": "http://localhost:3000/images/zz-plant.jpg",
+      "id": 8
     }
   ]
 }
